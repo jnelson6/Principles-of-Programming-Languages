@@ -1,0 +1,53 @@
+type token =
+    UNPAIR
+  | TIMES
+  | THEN
+  | SND
+  | SETREF
+  | SET
+  | SEMICOLON
+  | RPAREN
+  | RBRACE
+  | PROC
+  | PLUS
+  | PAIR
+  | NEWREF
+  | MINUS
+  | LPAREN
+  | LETREC
+  | LET
+  | LESSTHAN
+  | LBRACE
+  | ISZERO
+  | ISNUMBER
+  | INT of int
+  | IN
+  | IF
+  | ID of string
+  | GREATERTHAN
+  | FST
+  | EQUALSMUTABLE
+  | EQUALS
+  | EOF
+  | END
+  | ELSE
+  | DOT
+  | DIVIDED
+  | DEREF
+  | DEBUG
+  | COMMA
+  | BEGIN
+val menhir_begin_marker : int
+val xv_separated_nonempty_list_SEMICOLON_field_ :
+  (string * (bool * Ast.expr)) list
+val xv_separated_nonempty_list_SEMICOLON_expr_ : Ast.expr list
+val xv_separated_list_SEMICOLON_field_ : (string * (bool * Ast.expr)) list
+val xv_separated_list_SEMICOLON_expr_ : Ast.expr list
+val xv_prog : Ast.expr
+val xv_loption_separated_nonempty_list_SEMICOLON_field__ :
+  (string * (bool * Ast.expr)) list
+val xv_loption_separated_nonempty_list_SEMICOLON_expr__ : Ast.expr list
+val xv_field : string * (bool * Ast.expr)
+val xv_exprs : Ast.expr list
+val xv_expr : Ast.expr
+val menhir_end_marker : int
