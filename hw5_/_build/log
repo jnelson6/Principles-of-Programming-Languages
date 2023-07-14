@@ -1,0 +1,152 @@
+# dune build
+# OCAMLPARAM: unset
+# Shared cache: disabled
+# Workspace root: /Users/Julia/Desktop/cs496_/hw5_stub
+# Auto-detected concurrency: 8
+$ /usr/local/bin/ocamlc.opt -config > /var/folders/gn/169dtrf171n18myg5sfgjkr40000gn/T/dune_141fdf_output
+# Dune context:
+#  { name = "default"
+#  ; kind = "default"
+#  ; profile = Dev
+#  ; merlin = true
+#  ; for_host = None
+#  ; fdo_target_exe = None
+#  ; build_dir = "default"
+#  ; toplevel_path = Some External "/Users/Julia/.opam/default/lib/toplevel"
+#  ; ocaml_bin = External "/usr/local/bin"
+#  ; ocaml = Ok External "/usr/local/bin/ocaml"
+#  ; ocamlc = External "/usr/local/bin/ocamlc.opt"
+#  ; ocamlopt = Ok External "/usr/local/bin/ocamlopt.opt"
+#  ; ocamldep = Ok External "/usr/local/bin/ocamldep.opt"
+#  ; ocamlmklib = Ok External "/usr/local/bin/ocamlmklib.opt"
+#  ; env =
+#      map
+#        { "DUNE_OCAML_HARDCODED" : "/Users/Julia/.opam/default/lib"
+#        ; "DUNE_OCAML_STDLIB" : "/usr/local/lib/ocaml"
+#        ; "DUNE_SOURCEROOT" : "/Users/Julia/Desktop/cs496_/hw5_stub"
+#        ; "INSIDE_DUNE" :
+#            "/Users/Julia/Desktop/cs496_/hw5_stub/_build/default"
+#        ; "MANPATH" :
+#            "/Users/Julia/Desktop/cs496_/hw5_stub/_build/install/default/bin"
+#        ; "OCAMLFIND_IGNORE_DUPS_IN" :
+#            "/Users/Julia/Desktop/cs496_/hw5_stub/_build/install/default/lib"
+#        ; "OCAMLPATH" :
+#            "/Users/Julia/Desktop/cs496_/hw5_stub/_build/install/default/lib"
+#        ; "OCAMLTOP_INCLUDE_PATH" :
+#            "/Users/Julia/Desktop/cs496_/hw5_stub/_build/install/default/lib/toplevel"
+#        ; "OCAML_COLOR" : "always"
+#        ; "OPAMCOLOR" : "always"
+#        }
+#  ; findlib_path = [ External "/Users/Julia/.opam/default/lib" ]
+#  ; arch_sixtyfour = true
+#  ; natdynlink_supported = true
+#  ; supports_shared_libraries = true
+#  ; ocaml_config =
+#      { version = "4.12.0"
+#      ; standard_library_default = "/usr/local/lib/ocaml"
+#      ; standard_library = "/usr/local/lib/ocaml"
+#      ; standard_runtime = "the_standard_runtime_variable_was_deleted"
+#      ; ccomp_type = "cc"
+#      ; c_compiler = "clang"
+#      ; ocamlc_cflags = [ "-O2"; "-fno-strict-aliasing"; "-fwrapv" ]
+#      ; ocamlc_cppflags = [ "-D_FILE_OFFSET_BITS=64"; "-D_REENTRANT" ]
+#      ; ocamlopt_cflags = [ "-O2"; "-fno-strict-aliasing"; "-fwrapv" ]
+#      ; ocamlopt_cppflags = [ "-D_FILE_OFFSET_BITS=64"; "-D_REENTRANT" ]
+#      ; bytecomp_c_compiler =
+#          [ "clang"
+#          ; "-O2"
+#          ; "-fno-strict-aliasing"
+#          ; "-fwrapv"
+#          ; "-D_FILE_OFFSET_BITS=64"
+#          ; "-D_REENTRANT"
+#          ]
+#      ; bytecomp_c_libraries = [ "-lm"; "-lpthread" ]
+#      ; native_c_compiler =
+#          [ "clang"
+#          ; "-O2"
+#          ; "-fno-strict-aliasing"
+#          ; "-fwrapv"
+#          ; "-D_FILE_OFFSET_BITS=64"
+#          ; "-D_REENTRANT"
+#          ]
+#      ; native_c_libraries = [ "-lm" ]
+#      ; native_pack_linker = [ "ld"; "-r"; "-o" ]
+#      ; cc_profile = []
+#      ; architecture = "amd64"
+#      ; model = "default"
+#      ; int_size = 63
+#      ; word_size = 64
+#      ; system = "macosx"
+#      ; asm = [ "clang"; "-arch"; "x86_64"; "-Wno-trigraphs"; "-c" ]
+#      ; asm_cfi_supported = true
+#      ; with_frame_pointers = false
+#      ; ext_exe = ""
+#      ; ext_obj = ".o"
+#      ; ext_asm = ".s"
+#      ; ext_lib = ".a"
+#      ; ext_dll = ".so"
+#      ; os_type = "Unix"
+#      ; default_executable_name = "a.out"
+#      ; systhread_supported = true
+#      ; host = "x86_64-apple-darwin20.3.0"
+#      ; target = "x86_64-apple-darwin20.3.0"
+#      ; profiling = false
+#      ; flambda = false
+#      ; spacetime = false
+#      ; safe_string = true
+#      ; exec_magic_number = "Caml1999X029"
+#      ; cmi_magic_number = "Caml1999I029"
+#      ; cmo_magic_number = "Caml1999O029"
+#      ; cma_magic_number = "Caml1999A029"
+#      ; cmx_magic_number = "Caml1999Y029"
+#      ; cmxa_magic_number = "Caml1999Z029"
+#      ; ast_impl_magic_number = "Caml1999M029"
+#      ; ast_intf_magic_number = "Caml1999N029"
+#      ; cmxs_magic_number = "Caml1999D029"
+#      ; cmt_magic_number = "Caml1999T029"
+#      ; natdynlink_supported = true
+#      ; supports_shared_libraries = true
+#      ; windows_unicode = false
+#      }
+#  }
+$ (cd _build/default && /Users/Julia/.opam/default/bin/menhir src/parser.mly --base src/parser --infer-write-query src/parser__mock.ml.mock)
+$ (cd _build/default && /usr/local/bin/ocamllex -q -o src/lexer.ml src/lexer.mll)
+$ (cd _build/default && /usr/local/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -w -49 -nopervasives -nostdlib -g -bin-annot -I src/.checked.objs/byte -no-alias-deps -opaque -o src/.checked.objs/byte/checked.cmo -c -impl src/checked.ml-gen)
+$ (cd _build/default && /usr/local/bin/ocamldep.opt -modules -impl src/ast.ml) > _build/default/src/.checked.objs/ast.ml.d
+$ (cd _build/default && /usr/local/bin/ocamldep.opt -modules -impl src/checker.ml) > _build/default/src/.checked.objs/checker.ml.d
+> File "src/checker.ml", line 63, characters 13-15:
+> 63 |     failwith -> "implement me"
+>                   ^^
+> Error: Syntax error
+[2]
+$ (cd _build/default && /usr/local/bin/ocamldep.opt -modules -impl src/ds.ml) > _build/default/src/.checked.objs/ds.ml.d
+$ (cd _build/default && /usr/local/bin/ocamldep.opt -modules -impl src/parser__mock.ml.mock) > _build/default/src/.checked.objs/parser__mock.ml.mock.d
+$ (cd _build/default && /usr/local/bin/ocamldep.opt -modules -impl src/dst.ml) > _build/default/src/.checked.objs/dst.ml.d
+$ (cd _build/default && /usr/local/bin/ocamldep.opt -modules -impl src/interp.ml) > _build/default/src/.checked.objs/interp.ml.d
+$ (cd _build/default && /usr/local/bin/ocamldep.opt -modules -impl src/reM.ml) > _build/default/src/.checked.objs/reM.ml.d
+$ (cd _build/default && /usr/local/bin/ocamldep.opt -modules -impl src/lexer.ml) > _build/default/src/.checked.objs/lexer.ml.d
+$ (cd _build/default && /usr/local/bin/ocamldep.opt -modules -intf src/store.mli) > _build/default/src/.checked.objs/store.mli.d
+$ (cd _build/default && /usr/local/bin/ocamldep.opt -modules -impl src/store.ml) > _build/default/src/.checked.objs/store.ml.d
+$ (cd _build/default && /usr/local/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -warn-error -A -g -bin-annot -I src/.checked.objs/byte -no-alias-deps -opaque -open Checked -o src/.checked.objs/byte/checked__ReM.cmo -c -impl src/reM.ml)
+$ (cd _build/default && /usr/local/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -warn-error -A -g -bin-annot -I src/.checked.objs/byte -no-alias-deps -opaque -open Checked -o src/.checked.objs/byte/checked__Ast.cmo -c -impl src/ast.ml)
+$ (cd _build/default && /usr/local/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -warn-error -A -g -bin-annot -I src/.checked.objs/byte -no-alias-deps -opaque -open Checked -o src/.checked.objs/byte/checked__Dst.cmo -c -impl src/dst.ml)
+$ (cd _build/default && /usr/local/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -w -49 -nopervasives -nostdlib -g -I src/.checked.objs/byte -I src/.checked.objs/native -intf-suffix .ml-gen -no-alias-deps -opaque -o src/.checked.objs/native/checked.cmx -c -impl src/checked.ml-gen)
+$ (cd _build/default && /usr/local/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -warn-error -A -g -bin-annot -I src/.checked.objs/byte -no-alias-deps -opaque -open Checked -o src/.checked.objs/byte/checked__Ds.cmo -c -impl src/ds.ml)
+$ (cd _build/default && /usr/local/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -warn-error -A -g -bin-annot -I src/.checked.objs/byte -no-alias-deps -opaque -open Checked -o src/.checked.objs/byte/checked__Store.cmi -c -intf src/store.mli)
+$ (cd _build/.sandbox/1eff48636f50635d30c224cd1d7d5c9c/default && /usr/local/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -warn-error -A -g -I src/.checked.objs/byte -open Checked -short-paths -i -impl src/parser__mock.ml.mock) > _build/.sandbox/1eff48636f50635d30c224cd1d7d5c9c/default/src/parser__mock.mli.inferred
+$ (cd _build/default && /usr/local/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -warn-error -A -g -bin-annot -I src/.checked.objs/byte -intf-suffix .ml -no-alias-deps -opaque -open Checked -o src/.checked.objs/byte/checked__Store.cmo -c -impl src/store.ml)
+$ (cd _build/default && /usr/local/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -warn-error -A -g -I src/.checked.objs/byte -I src/.checked.objs/native -intf-suffix .ml -no-alias-deps -opaque -open Checked -o src/.checked.objs/native/checked__ReM.cmx -c -impl src/reM.ml)
+$ (cd _build/default && /usr/local/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -warn-error -A -g -I src/.checked.objs/byte -I src/.checked.objs/native -intf-suffix .ml -no-alias-deps -opaque -open Checked -o src/.checked.objs/native/checked__Dst.cmx -c -impl src/dst.ml)
+$ (cd _build/default && /usr/local/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -warn-error -A -g -I src/.checked.objs/byte -I src/.checked.objs/native -intf-suffix .ml -no-alias-deps -opaque -open Checked -o src/.checked.objs/native/checked__Ast.cmx -c -impl src/ast.ml)
+$ (cd _build/default && /usr/local/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -warn-error -A -g -I src/.checked.objs/byte -I src/.checked.objs/native -intf-suffix .ml -no-alias-deps -opaque -open Checked -o src/.checked.objs/native/checked__Ds.cmx -c -impl src/ds.ml)
+$ (cd _build/default && /Users/Julia/.opam/default/bin/menhir src/parser.mly --base src/parser --infer-read-reply src/parser__mock.mli.inferred)
+$ (cd _build/default && /usr/local/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -warn-error -A -g -I src/.checked.objs/byte -I src/.checked.objs/native -intf-suffix .ml -no-alias-deps -opaque -open Checked -o src/.checked.objs/native/checked__Store.cmx -c -impl src/store.ml)
+$ (cd _build/default && /usr/local/bin/ocamldep.opt -modules -intf src/parser.mli) > _build/default/src/.checked.objs/parser.mli.d
+$ (cd _build/default && /usr/local/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -warn-error -A -g -bin-annot -I src/.checked.objs/byte -no-alias-deps -opaque -open Checked -o src/.checked.objs/byte/checked__Parser.cmi -c -intf src/parser.mli)
+$ (cd _build/default && /usr/local/bin/ocamldep.opt -modules -impl src/parser.ml) > _build/default/src/.checked.objs/parser.ml.d
+$ (cd _build/default && /usr/local/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -warn-error -A -g -bin-annot -I src/.checked.objs/byte -no-alias-deps -opaque -open Checked -o src/.checked.objs/byte/checked__Lexer.cmo -c -impl src/lexer.ml)
+$ (cd _build/default && /usr/local/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -warn-error -A -g -bin-annot -I src/.checked.objs/byte -no-alias-deps -opaque -open Checked -o src/.checked.objs/byte/checked__Interp.cmo -c -impl src/interp.ml)
+$ (cd _build/default && /usr/local/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -warn-error -A -g -I src/.checked.objs/byte -I src/.checked.objs/native -intf-suffix .ml -no-alias-deps -opaque -open Checked -o src/.checked.objs/native/checked__Lexer.cmx -c -impl src/lexer.ml)
+$ (cd _build/default && /usr/local/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -warn-error -A -g -I src/.checked.objs/byte -I src/.checked.objs/native -intf-suffix .ml -no-alias-deps -opaque -open Checked -o src/.checked.objs/native/checked__Interp.cmx -c -impl src/interp.ml)
+$ (cd _build/default && /usr/local/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -warn-error -A -g -bin-annot -I src/.checked.objs/byte -intf-suffix .ml -no-alias-deps -opaque -open Checked -o src/.checked.objs/byte/checked__Parser.cmo -c -impl src/parser.ml)
+$ (cd _build/default && /usr/local/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -warn-error -A -g -I src/.checked.objs/byte -I src/.checked.objs/native -intf-suffix .ml -no-alias-deps -opaque -open Checked -o src/.checked.objs/native/checked__Parser.cmx -c -impl src/parser.ml)

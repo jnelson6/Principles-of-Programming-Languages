@@ -1,0 +1,89 @@
+(lang dune 3.1)
+(name checked)
+(sections (lib .) (libexec .))
+(files
+ (lib
+  (META
+   ast.ml
+   checked.a
+   checked.cma
+   checked.cmi
+   checked.cmt
+   checked.cmx
+   checked.cmxa
+   checked.ml
+   checked__Ast.cmi
+   checked__Ast.cmt
+   checked__Ast.cmx
+   checked__Checker.cmi
+   checked__Checker.cmt
+   checked__Checker.cmx
+   checked__Ds.cmi
+   checked__Ds.cmt
+   checked__Ds.cmx
+   checked__Dst.cmi
+   checked__Dst.cmt
+   checked__Dst.cmx
+   checked__Interp.cmi
+   checked__Interp.cmt
+   checked__Interp.cmx
+   checked__Lexer.cmi
+   checked__Lexer.cmt
+   checked__Lexer.cmx
+   checked__Parser.cmi
+   checked__Parser.cmt
+   checked__Parser.cmti
+   checked__Parser.cmx
+   checked__ReM.cmi
+   checked__ReM.cmt
+   checked__ReM.cmx
+   checked__Store.cmi
+   checked__Store.cmt
+   checked__Store.cmti
+   checked__Store.cmx
+   checker.ml
+   ds.ml
+   dst.ml
+   dune-package
+   interp.ml
+   lexer.ml
+   opam
+   parser.ml
+   parser.mli
+   reM.ml
+   store.ml
+   store.mli))
+ (libexec (checked.cmxs)))
+(library
+ (name checked)
+ (kind normal)
+ (synopsis "Interpreter for CHECKED")
+ (archives (byte checked.cma) (native checked.cmxa))
+ (plugins (byte checked.cma) (native checked.cmxs))
+ (native_archives checked.a)
+ (main_module_name Checked)
+ (modes byte native)
+ (modules
+  (wrapped
+   (main_module_name Checked)
+   (modules
+    ((name Ast) (obj_name checked__Ast) (visibility public) (impl))
+    ((name Checker) (obj_name checked__Checker) (visibility public) (impl))
+    ((name Ds) (obj_name checked__Ds) (visibility public) (impl))
+    ((name Dst) (obj_name checked__Dst) (visibility public) (impl))
+    ((name Interp) (obj_name checked__Interp) (visibility public) (impl))
+    ((name Lexer) (obj_name checked__Lexer) (visibility public) (impl))
+    ((name Parser)
+     (obj_name checked__Parser)
+     (visibility public)
+     (impl)
+     (intf))
+    ((name ReM) (obj_name checked__ReM) (visibility public) (impl))
+    ((name Store) (obj_name checked__Store) (visibility public) (impl) (intf)))
+   (alias_module
+    (name Checked)
+    (obj_name checked)
+    (visibility public)
+    (kind alias)
+    (impl))
+   (wrapped true))))
